@@ -2,7 +2,12 @@
 <html>
   <head>
     <title>Jovian Careers</title>
-    <style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    
+    <!-- <style>
       h1 {
         font-size: 40px;
         font-family: Roboto;
@@ -37,21 +42,26 @@
         height: 360px;
         obcoverfit: cover;
       }
-    </style>
+    </style> -->
   </head>
   <body>
-    <div id='container'>
-      <h1>Hanz Careers</h1>
-      <img id = "banner" src="https://static.vecteezy.com/system/resources/previews/000/381/551/original/abstract-technology-banner-template-vector.jpg" height="320">
-      <h2>About Hanz</h2>
-      <p class="bodytext">
+    <div class="container">
+      <h1 class="text-center">{{company_name}} Careers</h1>
+      <img class="img-fluid" id = "banner" src="https://static.vecteezy.com/system/resources/previews/000/381/551/original/abstract-technology-banner-template-vector.jpg" height="320">
+      <h2 class="text-center mt-2 mb-4">About {{company_name}}</h2>
+      <p class="lead">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare lectus sit amet est placerat in egestas. Accumsan in nisl nisi scelerisque eu. Quis imperdiet massa tincidunt nunc pulvinar sapien. Risus viverra adipiscing at in tellus integer. Eu lobortis elementum nibh tellus. Sed enim ut sem viverra aliquet eget. Sit amet aliquam id diam. Sociis natoque penatibus et magnis dis parturient montes nascetur. Pulvinar elementum integer enim neque volutpat ac tincidunt.
       </p>
-      <h2>Open Positions</h2>
-      <p class="bodytext">TODO - Show the jobs here</p>
-      <div style='text-align: center;'>
-        <button>Contact Us</button>
-        <p>Copyright 2023, Hanz</p>
+      <h2 class="text-center mt-2 mb-4"">Open Positions</h2>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+      
+      <div class="text-center">
+        <button class="btn btn-primary btn-lg">Contact Us</button>
+        <p class="mt-4">Copyright 2023, Hanz</p>
       </div>
     </div>
   </body>
